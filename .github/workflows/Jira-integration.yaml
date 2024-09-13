@@ -20,8 +20,8 @@ jobs:
                 type: jira
                 port_client_id: ${{ secrets.PORT_CLIENT_ID }}
                 port_client_secret: ${{ secrets.PORT_CLIENT_SECRET }}
-				port_base_url: "https://api.getport.io"
+                port_base_url: "https://api.getport.io"
                 config: |
-                    jira_host: "ENTER VALUE HERE"
+                    jira_host: "https://goodnessolajide.atlassian.net"
                     atlassian_user_email: ${{ secrets.atlassianUserEmail }}
                     atlassian_user_token: ${{ secrets.atlassianUserToken }}
