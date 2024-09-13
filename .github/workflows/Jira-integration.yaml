@@ -5,23 +5,23 @@
 # integration.secrets.atlassian_user_token: You can configure the user token on the <a target="_blank" href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian account page</a>
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */1 * * *' # Determines the scheduled interval for this workflow. This example runs every hour.
+    workflow_dispatch:
+    schedule:
+        - cron: '0 */1 * * *' # Determines the scheduled interval for this workflow. This example runs every hour.
 
 jobs:
-  run-integration:
-    runs-on: ubuntu-latest
+    run-integration:
+        runs-on: ubuntu-latest
 
-      steps:
-        - name: Run jira Integration
-          uses: port-labs/ocean-sail@v1
-          with:
-            type: jira
-            port_client_id: ${{ secrets.PORT_CLIENT_ID }}
-            port_client_secret: ${{ secrets.PORT_CLIENT_SECRET }}
-            port_base_url: "https://api.getport.io"
-            config: |
-              jira_host: "ENTER VALUE HERE"
-              atlassian_user_email: ${{ secrets.atlassianUserEmail }}
-              atlassian_user_token: ${{ secrets.atlassianUserToken }}
+        steps:
+            - name: Run jira Integration
+              uses: port-labs/ocean-sail@v1
+              with:
+                type: jira
+                port_client_id: ${{ secrets.PORT_CLIENT_ID }}
+                port_client_secret: ${{ secrets.PORT_CLIENT_SECRET }}
+				        port_base_url: "https://api.getport.io"
+                config: |
+                    jira_host: "ENTER VALUE HERE"
+                    atlassian_user_email: ${{ secrets.atlassianUserEmail }}
+                    atlassian_user_token: ${{ secrets.atlassianUserToken }}
